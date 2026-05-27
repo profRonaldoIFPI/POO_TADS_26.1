@@ -8,6 +8,7 @@ public class App {
     
     //4ª
         Produto p = new Produto("Cajuina Aeroporto", -50);
+        p.setPreco(10);
         System.out.println(p.getPreco());
 
     }
