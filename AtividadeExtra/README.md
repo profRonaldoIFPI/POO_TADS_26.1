@@ -1,40 +1,42 @@
-# Atividade Extra - Prática de Construtores e Coleções
+# Atividade Extra - Construtores e Encapsulamento
 
-Este projeto apresenta a resolução de questões práticas de fixação de Programação Orientada a Objetos. O foco é a manipulação prática de múltiplos **construtores** (sobrecarga), inicialização de estados e a utilização básica de **vetores (arrays)** para armazenamento de atributos de um objeto.
+Este diretório contém resoluções práticas e materiais de referência baseados nas listas de exercícios de fixação **5.1** e **5.2**. 
 
----
-
-## 📂 Estrutura de Arquivos no `src/`
-
-O projeto contém as seguintes implementações:
-
-### 1. `Pessoa.java`
-Representa um exercício de modelagem simples de dados pessoais com foco em inicialização de estado.
-- **Atributos:** `String nome` e `int idade`.
-- **Sobrecarga de Construtores:**
-  - `Pessoa()`: Construtor sem argumentos (padrão).
-  - `Pessoa(String nome, int idade)`: Construtor parametrizado que exige o preenchimento de dados iniciais obrigatórios.
-- **Comportamento:**
-  - `apresentar()`: Imprime uma saudação informando o nome e a idade da pessoa. Se o construtor sem argumentos for usado e os campos não forem preenchidos, os atributos serão exibidos como nulo/zero.
-
-### 2. `Aluno.java`
-Desenvolve o conceito de arrays como atributos internos de um objeto.
-- **Atributos:** `String nome` e um vetor de notas de tamanho fixo `float[] notas = new float[2]`.
-- **Sobrecarga de Construtores:**
-  - `Aluno(String nome)`: Inicializa apenas o nome.
-  - `Aluno(String nome, float nota1, float nota2)`: Inicializa o nome e já preenche as duas posições do array com as notas fornecidas.
-- **Comportamento:**
-  - `media()`: Calcula e retorna a média aritmética simples do aluno iterando o vetor através do laço **for-each** (`for (float nota : notas)`).
-
-### 3. `App.java`
-Classe executável contendo o ponto de partida do sistema.
-- **Questão 1:** Demonstra a criação de duas instâncias de `Pessoa` (uma via construtor padrão e outra parametrizada) para destacar a diferença entre atributos nulos e atributos inicializados.
-- **Questão 4:** Demonstra as duas maneiras de criar e preencher notas para a classe `Aluno` (atribuição direta no array externo vs. passagem direta via parâmetros do construtor) e exibe as médias correspondentes.
+Os arquivos PDF originais contendo todas as especificações estão anexados a esta pasta:
+- [**`Lista Exercícios 5.1.pdf`**](./Lista%20Exercícios%205.1.pdf) - Foco em **Métodos Construtores** (básicos, com lógica e interativos).
+- [**`Lista Exercícios 5.2.pdf`**](./Lista%20Exercícios%205.2.pdf) - Foco em **Encapsulamento** (atributos privados, getters, setters e validações de regras de negócio).
 
 ---
 
-## 🧠 Conceitos de POO Consolidados nesta Atividade
+## 📂 Mapeamento de Resoluções neste Diretório
 
-1. **Sobrecarga de Construtores (Overloading):** A capacidade de definir mais de um construtor na mesma classe, mudando apenas os parâmetros recebidos. Permite diferentes formas de instanciar e inicializar objetos.
-2. **Ciclo de Vida de Variáveis Locais vs. Atributos:** Uso do `this` para diferenciar atributos de classe de variáveis de parâmetro com nomes iguais.
-3. **Iteração Avançada (For-Each):** O uso de `for (Tipo variavel : array)` simplifica a leitura de vetores em Java, reduzindo chances de erros relacionados ao limite do índice do array (`ArrayIndexOutOfBoundsException`).
+Os códigos na pasta `src/` resolvem diretamente partes do **Exercício 5.1 (Construtores)**:
+
+### 1. `Pessoa.java` (Resolvendo a Questão 1 do Exercício 5.1)
+* **Objetivo:** Criar construtores básicos.
+* **Implementação:**
+  * Atributos de pacote: `String nome` e `int idade`.
+  * **Sobrecarga de Construtores:** Um construtor padrão vazio `Pessoa()` (inicializa com nulo/zero) e um construtor parametrizado `Pessoa(String nome, int idade)`.
+  * **Método:** `apresentar()` exibindo a mensagem padronizada no console.
+
+### 2. `Aluno.java` (Resolvendo a Questão 4 do Exercício 5.1)
+* **Objetivo:** Construtores com lógica e armazenamento de notas.
+* **Implementação:**
+  * Atributos: `String nome` e um array de notas `float[] notas` com tamanho fixo para duas notas.
+  * **Sobrecarga de Construtores:**
+    * Um construtor que aceita apenas o `nome` (inicializando as notas com `0` por padrão).
+    * Outro que aceita `nome`, `nota1` e `nota2` de forma direta.
+  * **Método:** `media()` que faz a iteração do array de notas usando o loop *for-each* para computar a média aritmética simples.
+
+### 3. `App.java` (Ponto de Teste)
+* Executa a instanciação das classes `Pessoa` e `Aluno` passando parâmetros diferentes para testar o comportamento dos múltiplos construtores no console.
+
+---
+
+## 🧠 Tabela Comparativa de Conceitos: Lista 5.1 vs. Lista 5.2
+
+| Recurso | Exercício 5.1 (Construtores) | Exercício 5.2 (Encapsulamento) |
+| :--- | :--- | :--- |
+| **Visibilidade dos Atributos** | Geralmente padrão (*package-private*) ou pública para facilitar a inicialização. | Obrigatoriamente **`private`**, ocultando o estado interno do objeto. |
+| **Acesso a Atributos** | Direto (ex: `objeto.atributo = valor`). | Indireto e controlado via **Getters e Setters** (ex: `objeto.setAtributo(valor)`). |
+| **Integridade de Dados** | Garantida no "nascimento" do objeto por meio dos **Construtores**. | Garantida ao longo de toda a vida do objeto por meio de regras nos **Setters**. |

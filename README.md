@@ -48,7 +48,7 @@ Cada pasta listada acima representa um projeto Java independente estruturado par
 
 ---
 
-## 👨‍🏫 Orientação
+## Orientação
 
 - **Instituição:** Instituto Federal de Educação, Ciência e Tecnologia do Piauí (IFPI) - Campus Floriano
 - **Curso:** Tecnologia em Análise e Desenvolvimento de Sistemas (TADS)
