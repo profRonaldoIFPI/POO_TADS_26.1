@@ -4,7 +4,7 @@ public class Aluno{
     public Aluno(String nome){
         this.nome = nome;
     }
-    public Aluno(String nome, float nota1, float nota2){
+    public Aluno(String nome, float nota1, float nota2){    
         this.nome = nome;
         this.notas[0]= nota1;
         this.notas[1]= nota2;

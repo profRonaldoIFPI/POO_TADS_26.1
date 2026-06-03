@@ -1,5 +1,14 @@
 public class App {
     public static void main(String[] args) throws Exception {
+//exemplo encapsulamento
+        Pessoa pessoa = new Pessoa("Gardenia", 22);
+
+        pessoa.setNascimento(32, 13, 10000);//pode isso?
+        pessoa.getNascimento();
+
+
+
+
 //questão 1
         Pessoa p1 = new Pessoa();
         Pessoa p2 = new Pessoa("Ronaldo", 44);
@@ -12,5 +21,7 @@ public class App {
         System.out.println(a.media());
         Aluno a2 = new Aluno("Viviany", 9.5f, 8.5f);
         System.out.println(a2.media());
+
+
     }
 }
